@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #898da4;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: #14151a;
+}
+body .centered-content {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+body .centered-content .line {
+  display: flex;
+  margin: 0 0 8px 0;
+  width: 100%;
+  height: 70px;
+}
+body .centered-content .line .left, body .centered-content .line .right {
+  display: flex;
+  width: auto;
+  height: 100%;
+}
+body .centered-content .line .left {
+  margin: 0 auto 0 0;
+}
+body .centered-content .line .right {
+  margin: 0 0 0 auto;
+}
+body .centered-content .line .case {
+  position: relative;
+  display: flex;
+  margin: 4px;
+  flex-direction: column;
+  width: 64px;
+  height: 100%;
+  background-color: #1b1c23;
+  cursor: pointer;
+  overflow: hidden;
+}
+body .centered-content .line .case.empty {
+  background-color: transparent;
+}
+body .centered-content .line .case span {
+  position: absolute;
+}
+body .centered-content .line .case span.mar {
+  right: 2px;
+  top: 2px;
+  font-size: 0.5rem;
+}
+body .centered-content .line .case span.atomic-number {
+  top: 2px;
+  left: 3px;
+  font-weight: 600;
+  font-size: 0.6875rem;
+}
+body .centered-content .line .case span.element-name {
+  width: 100%;
+  text-align: center;
+  bottom: 2px;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+body .centered-content .line .case h1 {
+  position: relative;
+  margin: auto;
+  font-size: 1.5rem;
+}
+body .centered-content .line .case h1.white {
+  color: #ffffff;
+}
