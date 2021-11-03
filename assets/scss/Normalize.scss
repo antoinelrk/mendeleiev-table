@@ -1,0 +1,26 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a:active, a:visited, a:hover, a {
+    text-decoration: none;
+    color: inherit;
+    border: inherit;
+}
+
+ul, li {
+    text-decoration: none;
+    list-style-type: none;
+    color: inherit;
+}
+
+img {
+    height: 100%;
+}
+
+button {
+    background-color: inherit;
+    cursor: pointer;
+}

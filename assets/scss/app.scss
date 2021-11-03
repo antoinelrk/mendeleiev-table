@@ -1,0 +1,185 @@
+@import "Normalize.scss";
+
+$background-color: #14151a;
+
+:root {
+    --background-color: #14151a;
+    --font-color: #ffffff;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: $background-color;
+    color: lighten($background-color, 50%);
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+
+    #app {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+
+        .centered-content {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+
+            .line {
+                display: flex;
+                width: 100%;
+                height: 70px;
+                margin-top: 8px;
+                opacity: 0;
+                animation: reveal 1s ease-in-out forwards;
+                transform: translateY(-30px);
+
+                &:nth-child(1) {
+                    animation-delay: 0s;
+                    margin-top: 0;
+                    justify-content: space-between;
+                }
+
+                &:nth-child(2) {
+                    animation-delay: .5s;
+                    .case {
+                        &:nth-child(2) {
+                            margin: 0 auto 0 0;
+                        }
+                    }
+                }
+                
+                &:nth-child(3) {
+                    animation-delay: 1s;
+                    .case {
+                        &:nth-child(2) {
+                            margin: 0 auto 0 0;
+                        }
+                    }
+                }
+                
+                &:nth-child(4) {
+                    animation-delay: 1.5s;
+                }
+                
+                &:nth-child(5) {
+                    animation-delay: 2s;
+                }
+                
+                &:nth-child(6) {
+                    animation-delay: 2.5s;
+                    .case {
+                        &:nth-child(2) {
+                            margin: 0 auto 0 4px;
+                        }
+                    }
+                }
+                
+                &:nth-child(7) {
+
+                    animation-delay: 3s;
+                    .case {
+                        &:nth-child(2) {
+                            margin: 0 76px 0 4px;
+                        }
+                    }
+                }
+
+
+                &:nth-child(8) {
+                    animation-delay: 3.5s;
+                    margin: 16px 4px 0 0;
+                }
+               
+                &:nth-child(9) {
+                    animation-delay: 4s;
+                }
+
+                &:nth-child(n+8) {
+
+                    .case {
+                        &:nth-child(1) {
+                            margin: 0 4px 0 auto;
+                        }
+                    }
+                }
+                
+                .case {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    width: 64px;
+                    margin: 0 4px;
+                    height: 100%;
+                    background-color: lighten($background-color, 3%);
+                    cursor: pointer;
+                    overflow: hidden;
+                    transition: transform .25s linear, filter .25s linear;
+
+                    &:hover {
+                        transform: scale3d(1.2, 1.2, 1.2);
+                        z-index: 99;
+                        transition: transform .25s linear, filter .25s linear;
+                        filter: drop-shadow(2px 2px 4px rgba(black, .5));
+                    }
+
+                    &.hovered {
+                        filter: blur(3px);
+                        transform: scale3d(.95, .95, .95);
+                        transition: filter .25s linear, transform .25s linear;
+                    }
+    
+                    &.empty {
+                        background-color: transparent;
+                    }
+                    
+                    span {
+                        position: absolute;
+                        
+                        
+                        &.mar {
+                            right: 2px;
+                            top: 2px;
+                            font-size: .5rem;
+                        }
+                        
+                        &.atomic-number {
+                            top: 2px;
+                            left: 3px;
+                            font-weight: 600;
+                            font-size: .6875rem;
+                        }
+    
+                        &.element-name {
+                            width: 100%;
+                            text-align: center;
+                            bottom: 2px;
+                            font-size: .5rem;
+                            text-transform: uppercase;
+                        }
+                    }
+    
+                    h1 {
+                        position: relative;
+                        margin: auto;
+                        font-size: 1.5rem;
+    
+                        &.white {
+                            color: var(--color-font);
+                        }
+                    }
+                }
+            }
+
+            @keyframes reveal {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}
